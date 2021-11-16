@@ -1,38 +1,122 @@
-.App {
+body{
+  background-color: rgb(48, 47, 47);
+}
+
+
+.product{
+  font-family: 'Courier New', Courier, monospace;
+  color: aliceblue;
+  width: 300px;
+  height: 400px;
+  margin: auto;
+  margin-top: 10px;
+  background-color: rgb(102, 102, 102);
+  padding: 10px;
+  border-radius: 10px;
+  word-break: break-all;
+  white-space: pre-wrap;
+
+}
+
+.singleProduct{
+  font-family: 'Courier New', Courier, monospace;
+  color: aliceblue;
+  width: 550px;
+  height: auto;
+  margin: auto;
+  margin-top: 10px;
+  background-color: rgb(102, 102, 102);
+  padding: 10px;
+  border-radius: 10px;
+  word-break: break-all;
+}
+
+.buyBtn{
+  width: 100px;
+  white-space:nowrap
+}
+
+.productList{
+  display: inline-flex;
+  white-space: nowrap;
+
+  width: 1300px;
+  margin: 0 17%;
+}
+
+.navbar{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  background-color: aliceblue;
+  display: inline-flex;
+  width: 100%;
+
+}
+
+.navbar li{
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.images{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.name, .price, .quantity, .sku, .images, .buyBtn{
+  text-align: center;
+  padding: 5px;
+}
+
+.name{
+  font-size: 13px;
+}
+
+.description{
+  text-align: center;
+  text-justify: inter-word;
+  padding: 5px;
+}
+
+#register, #login{
+  display: flex;
+  flex-grow: 1; 
+  flex-direction: column;
+ }
+
+ #register input , #login input, #register button{
+   height: 50px;
+   padding-left: 15px;
+   border-radius: 10px;
+ }
+
+ .box{
+
+ border: 2px solid rgb(0, 0, 0);
+ border-radius: 10px;
+ padding: 10px;
+ margin: auto;
+ margin-top: 10px;
+ background-color: rgba(213, 210, 214, 0.514);
+
+}
+
+.box h2{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btns{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.carousel{
+  width: 1000px;
+  margin: auto;
 }
