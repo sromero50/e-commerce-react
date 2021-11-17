@@ -22,6 +22,7 @@ return (
         </Card.Text>
         <Btn url={"/products/" + datos.id} text={'Details'} />
         <Btn url={"/checkout/" + datos.id} text={"Buy"} />
+        <Btn url={"/products/edit/" + datos.id} text={"Edit"} />
 
       </Card.Body>
     </Card>

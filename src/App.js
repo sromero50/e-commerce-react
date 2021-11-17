@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import { AltaProducto } from "./pages/ABMProducto/AltaProducto";
+import EditProduct from "./pages/ABMProducto/EditProduct";
 function App() {
 
   return <Router>
@@ -21,6 +22,9 @@ function App() {
               </Route>
               <Route path="/products/alta/">
                 <AltaProducto />
+              </Route>
+              <Route path="/products/edit/:id">
+                <EditProduct />
               </Route>
               <Route path="/products/:id">
                 <SingleProduct />

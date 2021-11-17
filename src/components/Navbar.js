@@ -10,7 +10,7 @@ const Menu = () => {
                 <Container>
                     <Navbar.Brand as={Link} to="/home" >Home</Navbar.Brand>
                     <Nav className="m-start">
-                        <Nav.Link as={Link} to="/products/alta">Alta Producto</Nav.Link>
+                        <Nav.Link as={Link} to="/products/alta">Register product</Nav.Link>
                         <Nav.Link as={Link} to="/register">Register</Nav.Link>
                         <Nav.Link as={Link} to="/login">Login</Nav.Link>
                     </Nav>

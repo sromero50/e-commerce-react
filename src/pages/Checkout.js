@@ -3,9 +3,11 @@ import { useParams } from "react-router"
 import CheckoutCard from '../components/checkoutCard'
 import firebase from '../Config/firebase'
 import Container from 'react-bootstrap/Container'
+import Loading from '../components/loading'
+
 const Checkout = () => {
   const { id } = useParams()
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(
@@ -26,13 +28,18 @@ const Checkout = () => {
 
     }, [id]
   )
-  if (loading) {
-    return (<Container><h2>Loading...</h2></Container>)
-  } else {
-    return (<Container>
-      <CheckoutCard datos={product.data()} />
-    </Container>)
-  }
+
+  return (
+    <Loading active={loading} >
+      {
+        product &&
+        
+          <CheckoutCard datos={product.data()} />
+       
+      }
+    </Loading>
+  )
+
 }
 
 

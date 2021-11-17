@@ -10,7 +10,7 @@ const Home = () => {
     <CarouselComponent />
     <Container style={{ marginTop: '10px' }}><Row xs={1} md={4} className="g-4">
       {Array.from({ length: 1 }).map((_, idx) => (
-        <ProductsList />
+        <ProductsList key={idx} />
       ))}
     </Row>
     </Container>
