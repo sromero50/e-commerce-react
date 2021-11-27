@@ -9,26 +9,19 @@ const DetailProduct = (props) => {
 const {datos} = props
 
 return (
-   
-    <Card style={{ width: '20rem', margin: "auto" }} className="text-center mt-3" bg="dark" text="light" >
-      <Card.Header style={{ whiteSpace: 'pre-wrap' }}>
-        {datos.name}
-      </Card.Header>
-      <Card.Body>
-      <Quantity />
-        <Card.Text>
-          {datos.description}
-        </Card.Text>
-        <Card.Text  >
-            {datos.price}
-        </Card.Text>
-        <Card.Text  >
-            SKU: 123123532
-        </Card.Text>
-        <Btn url={"/checkout/" + datos.id} text={"Buy"} />
-      </Card.Body>
-    </Card>
-   
+    <div className="p-5 mb-4 bg-light rounded border w-50 container mt-3 text-center">
+    <h1  className="display-5 fw-bold">{datos.name}</h1>
+      <img alt="..." src={datos.img} style={{width: "100%"}} />
+        
+        <h4 style={{fontSize: "40px",fontWeight: "lighter"}} className="text-center mt-2">{datos.description}</h4>
+        <span style={{fontSize: "15px"}} >{datos.sku}</span>
+        <h2 style={{fontSize: "40px", fontWeight: "lighter"}} >$ {datos.price}</h2>
+       
+
+        <Btn size={"lg"} url={"/checkout/" + datos.id} text={"Buy"} />
+    
+  </div>
+    
     )
 
 

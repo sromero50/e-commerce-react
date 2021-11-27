@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router"
 import CheckoutCard from '../components/checkoutCard'
 import firebase from '../Config/firebase'
-import Container from 'react-bootstrap/Container'
 import Loading from '../components/loading'
 
 const Checkout = () => {
@@ -33,8 +32,7 @@ const Checkout = () => {
     <Loading active={loading} >
       {
         product &&
-        
-          <CheckoutCard datos={product.data()} />
+        <CheckoutCard datos={product.data()} />
        
       }
     </Loading>

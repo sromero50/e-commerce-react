@@ -16,30 +16,30 @@ const EditProduct = () => {
   const [loading, setLoading] = useState(true);
   const [loadSpinner, setLoadSpinner] = useState(false);
 
-const handleChange = (event) => {
-  const name = event.target.name
-  const value = event.target.value
-  setForm({ ...form, [name]: value })
-}
-
-
-const {register, handleSubmit, formState:{errors}, setValue} = useForm();
-const [form, setForm] = useState({ name: '', price: '', description: ''})
-
-const onSubmit = async (data) => {
-  setLoadSpinner(true)
-    console.log(data)
-  try {
-    const document = await firebase.db.doc("productos/"+id)
-    .set(data)
-    setLoadSpinner(false)
-    console.log(document)
-    push('/home')
-  }catch(error){
-    setLoadSpinner(false)
-    console.log('error', error)
+  const handleChange = (event) => {
+    const name = event.target.name
+    const value = event.target.value
+    setForm({ ...form, [name]: value })
   }
-}
+
+
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+  const [form, setForm] = useState({ name: '', price: '', description: '', img: '', sku: '' })
+
+  const onSubmit = async (data) => {
+    setLoadSpinner(true)
+    console.log(data)
+    try {
+      const document = await firebase.db.doc("productos/" + id)
+        .set(data)
+      setLoadSpinner(false)
+      console.log(document)
+      push('/home')
+    } catch (error) {
+      setLoadSpinner(false)
+      console.log('error', error)
+    }
+  }
 
 
 
@@ -54,6 +54,8 @@ const onSubmit = async (data) => {
             setValue("name", response.data().name)
             setValue("price", response.data().price)
             setValue("description", response.data().description)
+            setValue("img", response.data().img)
+            setValue("sku", response.data().sku)
           }
         } catch (error) {
           console.log("error", error)
@@ -65,39 +67,39 @@ const onSubmit = async (data) => {
   )
 
   const handleDelete = async () => {
+    setLoadSpinner(true)
     try {
       const response = await firebase.db.doc("productos/" + id)
         .delete()
-        console.log(response)
-        push('/home')
-        
+      setLoadSpinner(false)
+      console.log(response)
+      push('/home')
+
     } catch (error) {
       console.log("error", error)
     }
   }
-  const handleSpinner = () => {
-    setLoadSpinner(!loadSpinner)
-  }
 
- 
-    return (<Loading active={loading} ><>
-      <Container className="text-center bg-dark w-25 p-3 my-4 rounded">
+
+
+  return (<Loading active={loading} ><>
+    <Container className="text-center bg-dark w-25 p-3 my-4 rounded">
       <h3 className="text-light mb-3">Edit product</h3>
-      
-        <form action="" id="register" name="formRegister" onSubmit={handleSubmit(onSubmit)} >
-          <Form.Control className="mb-3" type="text"  {...register("name")} name="name" placeholder="Name" onChange={handleChange} required />
-          <Form.Control className="mb-3" type="text"  {...register("price")} name="price" placeholder="Price" onChange={handleChange} required />
-          <Form.Control className="mb-3" type="text"  {...register("description")} name="description" placeholder="Description" onChange={handleChange} required />
-         <div className="row">
-         <ButtonSpinner class={"col mx-3"} loading={loadSpinner} type={"submit"} variant={"success"} >{loadSpinner == false ? "Save" : null }</ButtonSpinner>
-         {/* <ButtonSpinner function={()=> handleDelete() } class={"col mx-3"} loading={loadSpinner} type={"submit"} variant={"danger"} >{loadSpinner == false ? "Delete" : null }</ButtonSpinner> */}
-         {/* <Button variant="warning" type="submit" value="save" onClick={handleSpinner}  className="col mx-3">{loadSpinner == false ? "Save" : (<span class="sr-only spinner-border" />) }  </Button> */}
-         <Button variant="danger" onClick={()=> {handleSpinner() ; handleDelete() } } className="col mx-3" >{loadSpinner == false ? "Delete" : (<span class="sr-only spinner-border" />) }  </Button>
-         </div>
-        </form>
-      </Container>
-    </></Loading> )
-  
+
+      <form action="" id="register" name="formRegister" onSubmit={handleSubmit(onSubmit)} >
+        <Form.Control className="mb-3" type="text"  {...register("name")} name="name" placeholder="Name" onChange={handleChange} required />
+        <Form.Control className="mb-3" type="text"  {...register("price")} name="price" placeholder="Price" onChange={handleChange} required />
+        <Form.Control className="mb-3" type="text"  {...register("img")} name="img" placeholder="Image" onChange={handleChange} required />
+        <Form.Control className="mb-3" type="text"  {...register("sku")} name="sku" placeholder="Sku" onChange={handleChange} required />
+        <Form.Control className="mb-3" type="text"  {...register("description")} name="description" placeholder="Description" onChange={handleChange} required />
+        <div className="row">
+          <ButtonSpinner class={"col mx-3"} loading={loadSpinner} type={"submit"} variant={"success"} >{loadSpinner == false ? "Save" : null}</ButtonSpinner>
+          <ButtonSpinner class={"col mx-3"} loading={loadSpinner} variant={"danger"} function={() => handleDelete()} >{loadSpinner == false ? "Delete" : null}</ButtonSpinner>
+        </div>
+      </form>
+    </Container>
+  </></Loading>)
+
 }
 
 export default EditProduct

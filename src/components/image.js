@@ -1,9 +1,8 @@
 import React from 'react'
+import Card from 'react-bootstrap/Card'
 const Image = (props) => {
     return (
-        <div>
-            <img src={props.photo} alt="..." className="images"/>
-        </div>
+    <Card.Img variant="top" src={props.image} />
     )
 }
 

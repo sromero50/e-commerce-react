@@ -7,7 +7,7 @@ const Btn = (props) => {
     return (
 
 
-            <Link to={props.url}><Button  variant="warning" size="lg" style={{margin:"3px" }}>{props.text}</Button ></Link>
+           <Button href={props.url}  variant="warning" size="lg" style={{margin:"3px" }}>{props.text}</Button >
 
 
     )

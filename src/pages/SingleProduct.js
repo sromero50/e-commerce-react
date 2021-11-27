@@ -33,7 +33,7 @@ const SingleProduct = () => {
     return (<Loading active={loading}>
       { 
         product &&
-        <DetailProduct datos={product.data()} />
+        <DetailProduct datos={{...product.data(), id:id}} />
       }
       
       </Loading>

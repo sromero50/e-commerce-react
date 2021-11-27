@@ -1,11 +1,13 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect, useContext }  from "react";
 import Product from "./Product"
 import firebase from '../Config/firebase'
 import Loading from "./loading";
+import AuthContext from "../Context/authContext";
 const ProductsList = () => {
-
+  const auth = useContext(AuthContext)
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true)
+  console.log(useContext(AuthContext))
   useEffect(
     () => {
       async function request() {

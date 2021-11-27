@@ -9,9 +9,12 @@ import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import { AltaProducto } from "./pages/ABMProducto/AltaProducto";
 import EditProduct from "./pages/ABMProducto/EditProduct";
+import AuthProvider from "./Context/authProvider";
+
 function App() {
 
   return <Router>
+            <AuthProvider>
               <Menu />
             <Switch>
             <Route path="/register/">
@@ -19,6 +22,9 @@ function App() {
               </Route>
               <Route path="/login/">
                 <Login />
+              </Route>
+              <Route path="/checkout/:id">
+                <Checkout />
               </Route>
               <Route path="/products/alta/">
                 <AltaProducto />
@@ -37,6 +43,7 @@ function App() {
                 <Home />
               </Route>
             </Switch>
+            </AuthProvider>
         </Router>
 
 }

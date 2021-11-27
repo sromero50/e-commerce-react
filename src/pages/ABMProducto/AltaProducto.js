@@ -10,7 +10,7 @@ export const AltaProducto = () => {
   const { push } = useHistory()
   const {register, handleSubmit, formState:{errors}} = useForm();
   const [loadSpinner, setLoadSpinner] = useState(false)
-  const [form, setForm] = useState({ name: '', price: '', description: ''})
+  const [form, setForm] = useState({ name: '', price: '', description: '', img: '', sku: ''})
 
   const onSubmit = async (data) => {
       console.log(data)
@@ -39,12 +39,14 @@ const handleChange = (event) => {
 
 return (
 <Container className="text-center bg-dark w-25 p-3 my-4 rounded">
-<h2 className="text-light mb-3">Add product</h2>
+<h2 className="text-light mb-3">Add new product</h2>
   <form action="" id="register" name="formRegister" onSubmit={handleSubmit(onSubmit)} >
     <Form.Control className="mb-3" type="text"  {...register("name")} name="name" placeholder="Name" onChange={handleChange} required />
+    <Form.Control className="mb-3" type="text"  {...register("img")} name="img" placeholder="Image" onChange={handleChange} required />
     <Form.Control className="mb-3" type="text"  {...register("price")} name="price" placeholder="Price" onChange={handleChange} required />
+    <Form.Control className="mb-3" type="text"  {...register("sku")} name="sku" placeholder="Sku" onChange={handleChange} required />
     <Form.Control className="mb-3" type="text"  {...register("description")} name="description" placeholder="Description" onChange={handleChange} required />
-    <Button variant="warning" type="submit" value="save" onClick={handleSpinner} >{loadSpinner == false ? "Save" : (<span class="sr-only spinner-border" />) }  </Button>
+    <Button variant="warning" type="submit" value="save" onClick={handleSpinner} >{loadSpinner == false ? "Add" : (<span class="sr-only spinner-border" />) }  </Button>
   </form>
   </Container>
 )
