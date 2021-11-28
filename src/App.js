@@ -10,7 +10,7 @@ import Checkout from "./pages/Checkout";
 import { AltaProducto } from "./pages/ABMProducto/AltaProducto";
 import EditProduct from "./pages/ABMProducto/EditProduct";
 import AuthProvider from "./Context/authProvider";
-
+import Footer from "./components/footer";
 function App() {
 
   return <Router>
@@ -43,6 +43,7 @@ function App() {
                 <Home />
               </Route>
             </Switch>
+            <Footer />
             </AuthProvider>
         </Router>
 

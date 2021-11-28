@@ -12,12 +12,12 @@ return (
   <AuthContext.Consumer>{
     context =><>
     
-    <Col className="mx-1 col-xs-2 mb-3 d-flex " ><Card key={datos.id} style={{ width: '18rem' }} className="text-center mb-3 flex-column" bg="dark" text="light" >
+    <Col className="mx-1 col-xs-2 mb-3 d-flex " ><Card key={datos.id} style={{ width: '18rem' }} className="text-center mb-3 flex-column" bg="light" text="dark" >
   
       <Card.Header style={{ whiteSpace: 'pre-wrap' }}>
         {datos.name}
       </Card.Header>
-      <Card.Img style={{minWidth: "100%"}} variant="top" src={datos.img} />
+      <Card.Img style={{objectFit: 'cover', padding: "3px"}} variant="top" src={datos.img} />
       <Card.Body >
       
         <Card.Text  >
