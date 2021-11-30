@@ -6,20 +6,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitterSquare, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import Container from 'react-bootstrap/esm/Container';
 const Footer = () => {
-    return (<Navbar style={{ padding: "2px", margintop: "3px" }} bg="light" className="footer" fixed="bottom" expand="lg">
+
+    const icons = {
+        color: "white"
+    }
+    return (<Navbar style={{ padding: "2px", margintop: "3px" }} bg="dark" variant="dark" className="footer" fixed="bottom" expand="lg">
             <Container >
             <Nav style={{marginLeft: "630px"}} >
 
-                <span className="ms-5" style={{ fontWeight: "lighter" }} >Copyright 2021</span>
+                <span className="ms-5" style={{ fontWeight: "lighter", color: "white" }} >Copyright 2021</span>
 
 
             </Nav>
             
             </Container>
             
-                    <Nav.Link  className="text-dark" href="#"><FontAwesomeIcon icon={faTwitterSquare} /></Nav.Link>
-                    <Nav.Link className="text-dark" href="#"><FontAwesomeIcon icon={faFacebookSquare} /></Nav.Link>
-                    <Nav.Link className="text-dark" href="#"><FontAwesomeIcon icon={faInstagram} /></Nav.Link>
+                    <Nav.Link className="text-dark" href="#"><FontAwesomeIcon style={icons} icon={faTwitterSquare} /></Nav.Link>
+                    <Nav.Link  className="text-dark" href="#"><FontAwesomeIcon style={icons} icon={faFacebookSquare} /></Nav.Link>
+                    <Nav.Link className="text-dark" href="#"><FontAwesomeIcon style={icons} icon={faInstagram} /></Nav.Link>
 
                 
     </Navbar>

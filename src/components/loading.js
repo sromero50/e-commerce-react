@@ -4,7 +4,7 @@ const Loading = (props) => {
     const {active} = props
 
     
-    return (<>{active == true ? (<div className="d-flex justify-content-center mt-3 spinner"> <Spinner animation="border" variant="warning" /></div>) : (<>{props.children}</>)}</>)
+    return (<>{active == true ? (<div className="d-flex justify-content-center mt-3 spinner"> <Spinner animation="border" variant="warning" /><Spinner animation="border" variant="warning" /><Spinner animation="border" variant="warning" /></div>) : (<>{props.children}</>)}</>)
     
 }
 

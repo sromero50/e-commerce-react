@@ -83,15 +83,15 @@ const EditProduct = () => {
 
 
   return (<Loading active={loading} ><>
-    <Container className="text-center bg-dark w-25 p-3 my-4 rounded">
-      <h3 className="text-light mb-3">Edit product</h3>
+    <Container className="text-center bg-light w-25 p-4 my-5 login rounded">
+      <h3 className="text-dark my-3 display-5">Edit product</h3>
 
-      <form action="" id="register" name="formRegister" onSubmit={handleSubmit(onSubmit)} >
-        <Form.Control className="mb-3" type="text"  {...register("name")} name="name" placeholder="Name" onChange={handleChange} required />
-        <Form.Control className="mb-3" type="text"  {...register("price")} name="price" placeholder="Price" onChange={handleChange} required />
-        <Form.Control className="mb-3" type="text"  {...register("img")} name="img" placeholder="Image" onChange={handleChange} required />
-        <Form.Control className="mb-3" type="text"  {...register("sku")} name="sku" placeholder="Sku" onChange={handleChange} required />
-        <Form.Control className="mb-3" type="text"  {...register("description")} name="description" placeholder="Description" onChange={handleChange} required />
+      <form action="" id="register" name="formRegister" className="mt-4" onSubmit={handleSubmit(onSubmit)} >
+        <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("name")} name="name" placeholder="Name" onChange={handleChange} required />
+        <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("price")} name="price" placeholder="Price" onChange={handleChange} required />
+        <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("img")} name="img" placeholder="Image" onChange={handleChange} required />
+        <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("sku")} name="sku" placeholder="Sku" onChange={handleChange} required />
+        <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("description")} name="description" placeholder="Description" onChange={handleChange} required />
         <div className="row">
           <ButtonSpinner class={"col mx-3"} loading={loadSpinner} type={"submit"} variant={"success"} >{loadSpinner == false ? "Save" : null}</ButtonSpinner>
           <ButtonSpinner class={"col mx-3"} loading={loadSpinner} variant={"danger"} function={() => handleDelete()} >{loadSpinner == false ? "Delete" : null}</ButtonSpinner>

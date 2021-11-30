@@ -13,84 +13,10 @@ width: 100%;
 height: 30px;
 }
 
-.product{
-  font-family: 'Courier New', Courier, monospace;
-  color: aliceblue;
-  width: 300px;
-  height: 400px;
-  margin: auto;
-  margin-top: 10px;
-  background-color: rgb(102, 102, 102);
-  padding: 10px;
-  border-radius: 10px;
-  word-break: break-all;
-  white-space: pre-wrap;
-
+.boton{
+  background-color: rgba(255, 224, 45, 0.61) !important;
 }
 
-.singleProduct{
-  font-family: 'Courier New', Courier, monospace;
-  color: aliceblue;
-  width: 550px;
-  height: auto;
-  margin: auto;
-  margin-top: 10px;
-  background-color: rgb(102, 102, 102);
-  padding: 10px;
-  border-radius: 10px;
-  word-break: break-all;
-}
-
-.buyBtn{
-  width: 100px;
-  white-space:nowrap
-}
-
-.productList{
-  display: inline-flex;
-  white-space: nowrap;
-
-  width: 1300px;
-  margin: 0 17%;
-}
-
-.navbar{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  background-color: aliceblue;
-  display: inline-flex;
-  width: 100%;
-
-}
-
-.navbar li{
-  margin-left: 10px;
-  font-size: 20px;
-}
-
-.images{
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-.name, .price, .quantity, .sku, .images, .buyBtn{
-  text-align: center;
-  padding: 5px;
-}
-
-.name{
-  font-size: 13px;
-}
-
-.description{
-  text-align: center;
-  text-justify: inter-word;
-  padding: 5px;
-}
 
 #register, #login{
   display: flex;
@@ -104,37 +30,16 @@ height: 30px;
    border-radius: 10px;
  }
 
- .box{
 
- border: 2px solid rgb(0, 0, 0);
- border-radius: 10px;
- padding: 10px;
- margin: auto;
- margin-top: 10px;
- background-color: rgba(213, 210, 214, 0.514);
-
-}
-
-.box h2{
-  text-align: center;
-}
-
-.btns{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  
-}
-
-.carousel{
-  width: 1000px;
-  margin: auto;
-}
 
 .productosHome{
   margin-left: 150px !important;
 }
 
-.navbar{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+.navbar, .product, .login, .singleProduct, .picture{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.product:hover{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }

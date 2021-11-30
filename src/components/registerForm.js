@@ -59,11 +59,11 @@ export const RegisterForm = () => {
 
   return (
     <form action="" id="register" name="formRegister" onSubmit={handleSubmit} >
-      <Form.Control className="mb-3" type="text" value={form.name} name="name" placeholder="Name" onChange={handleChange} required />
-      <Form.Control className="mb-3" type="text" value={form.surname} name="surname" placeholder="Surname" onChange={handleChange} required />
-      <Form.Control className="mb-3" type="email" value={form.email} name="email" placeholder="Email" onChange={handleChange} required />
-      <Form.Control className="mb-3" type="password" value={form.password} name="password" placeholder="Password" onChange={handleChange} required />
-      <Form.Control className="mb-3" type="password" value={form.passwordConfirm} name="passwordConfirm" placeholder="Confirm password" onChange={handleChange} required />
+      <Form.Control className="mb-3 form-control border rounded" type="text" value={form.name} name="name" placeholder="Name" onChange={handleChange} required />
+      <Form.Control className="mb-3 form-control border rounded" type="text" value={form.surname} name="surname" placeholder="Surname" onChange={handleChange} required />
+      <Form.Control className="mb-3 form-control border rounded" type="email" value={form.email} name="email" placeholder="Email" onChange={handleChange} required />
+      <Form.Control className="mb-3 form-control border rounded" type="password" value={form.password} name="password" placeholder="Password" onChange={handleChange} required />
+      <Form.Control className="mb-3 form-control border rounded" type="password" value={form.passwordConfirm} name="passwordConfirm" placeholder="Confirm password" onChange={handleChange} required />
       <ButtonSpinner loading={loading} type={"submit"} variant={"warning"} >{loading == false ? "Sign up" : null}</ButtonSpinner>
 
     </form>

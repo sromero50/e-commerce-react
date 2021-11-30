@@ -38,15 +38,15 @@ const handleChange = (event) => {
 }
 
 return (
-<Container className="text-center bg-dark w-25 p-3 my-4 rounded">
-<h2 className="text-light mb-3">Add new product</h2>
+<Container className="text-center bg-light w-25 p-3 my-5 rounded border login">
+<h2 className="text-dark mb-3 display-5">Add new product</h2>
   <form action="" id="register" name="formRegister" onSubmit={handleSubmit(onSubmit)} >
-    <Form.Control className="mb-3" type="text"  {...register("name")} name="name" placeholder="Name" onChange={handleChange} required />
-    <Form.Control className="mb-3" type="text"  {...register("img")} name="img" placeholder="Image" onChange={handleChange} required />
-    <Form.Control className="mb-3" type="text"  {...register("price")} name="price" placeholder="Price" onChange={handleChange} required />
-    <Form.Control className="mb-3" type="text"  {...register("sku")} name="sku" placeholder="Sku" onChange={handleChange} required />
-    <Form.Control className="mb-3" type="text"  {...register("description")} name="description" placeholder="Description" onChange={handleChange} required />
-    <Button variant="warning" type="submit" value="save" onClick={handleSpinner} >{loadSpinner == false ? "Add" : (<span class="sr-only spinner-border" />) }  </Button>
+    <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("name")} name="name" placeholder="Name" onChange={handleChange} required />
+    <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("img")} name="img" placeholder="Image" onChange={handleChange} required />
+    <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("price")} name="price" placeholder="Price" onChange={handleChange} required />
+    <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("sku")} name="sku" placeholder="Sku" onChange={handleChange} required />
+    <Form.Control className="mb-3 form-control border rounded" type="text"  {...register("description")} name="description" placeholder="Description" onChange={handleChange} required />
+    <Button variant="warning" type="submit" value="save" onClick={handleSpinner} >{loadSpinner == false ? "Add product" : (<span class="sr-only spinner-border" />) }  </Button>
   </form>
   </Container>
 )
